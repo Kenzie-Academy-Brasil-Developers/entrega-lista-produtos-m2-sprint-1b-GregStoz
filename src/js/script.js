@@ -104,7 +104,7 @@ inputPlace.addEventListener("keyup", searchProduct);
 function createSearchSection() {
   productList.innerHTML = "";
   createItemCard(searchArray);
-  searchArray.splice(0, 1);
+  searchArray.splice(0, searchArray.length);
 }
 
 function searchProduct(event) {
@@ -134,9 +134,9 @@ function searchFn(searchValue) {
       productName.includes(search) ||
       typeOfProduct.includes(search) ||
       sectionOfProduct.includes(search)
-    ) {
+    )
       searchArray.push(element);
-    }
+
     return search;
   });
 }
