@@ -55,7 +55,6 @@
             type="text"
             placeholder="Pesquisar por"
             class="campoBuscaPorNome"
-
           />
           <button
             onClick="searchOnClick()"
@@ -65,13 +64,7 @@
           </button>
         </div>
       </section>
-      <section class="priceContainer">
-        <div>
-          <img src="./src/img/alert-circle.png" alt="exclamação de alerta" />
-          <p>Valor total dos produtos da sessão selecionada</p>
-        </div>
-        <span class="total__value">R$ 0.00</span>
-      </section>
+
       <!-- CONTAINER DE PRODUTOS -->
       <section class="containerVitrine">
         <div class="containerListaProdutos">
@@ -87,6 +80,22 @@
                         <p>R$ 2.00</p>
                     </li> -->
           </ul>
+        </div>
+
+        <div class="carrinhoProdutos">
+          <div class="cart">
+            <h2>🛒 Carrinho</h2>
+            <div class="cart__container"></div>
+            <div class="price__container">
+              <span class="price__area"
+                >Total:
+                <div><span>R$ </span><span id="total-price">00,00</span></div>
+              </span>
+              <span class="item__area"
+                >Quantidade:<span id="total-items">00</span></span
+              >
+            </div>
+          </div>
         </div>
       </section>
     </main>
