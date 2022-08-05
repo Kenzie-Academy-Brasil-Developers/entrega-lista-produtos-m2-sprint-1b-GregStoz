@@ -30,6 +30,7 @@ let priceArea = document.querySelector(".price__container");
 
 function createAlert() {
   let tagAlert = document.createElement("div");
+
   let tagImg = document.createElement("img");
   let tagAlertTitle = document.createElement("h3");
   let tagAlertText = document.createElement("p");
