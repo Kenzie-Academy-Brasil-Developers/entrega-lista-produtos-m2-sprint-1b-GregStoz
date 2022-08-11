@@ -69,10 +69,13 @@ function removeProduct(product) {
 }
 
 function sumCart() {
-  let cartTotalPrice = cartList.reduce(
-    (total, current) => (total += current.preco),
-    0
-  );
+  let cartTotalPrice = cartList.reduce((total, current) => {
+    let itemPrice = current.preco;
+    if (current.promocao === true) {
+      itemPrice = current.precoPromocao;
+    }
+    return (total += itemPrice);
+  }, 0);
   totalPrice.innerText = cartTotalPrice.toFixed(2).replace(".", ",");
   totalItems.innerText = cartList.length;
 }
@@ -131,9 +134,12 @@ function itemReader() {
     let item = {
       nome: element.nome,
       preco: element.preco,
+      precoPromocao: element.precoPromocao,
       secao: element.secao,
       categoria: element.categoria,
       img: element.img,
+      componentes: element.componentes,
+      promocao: element.promocao,
     };
     if (item.secao == "Hortifruti") {
       arrayFruit.push(item);
